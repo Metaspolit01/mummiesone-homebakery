@@ -1,0 +1,25 @@
+{
+  "overview": "Mummies One is a full-featured homemade bakery ordering system. Customers can browse items by category, place orders with delivery or pickup options, and choose their payment method. An admin panel lets the bakery owner manage products, categories, and track all orders in real time.",
+  "features": [
+    "Product catalog with category filters (Cakes, Chocolates, Brownies, Cookies, Donuts)",
+    "Order flow with door delivery and self-pickup options",
+    "Date picker with minimum +1 day advance ordering",
+    "Admin dashboard with order and item management",
+    "Image upload for items via object storage",
+    "Hardcoded admin login (admin/admin)",
+    "Green gradient bakery theme with logo",
+    "Click-to-call button for mobile users",
+    "Custom cake request form",
+    "UPI and cash-on-delivery payment options"
+  ],
+  "category": "e-commerce",
+  "tags": [
+    "bakery",
+    "ordering",
+    "admin",
+    "food",
+    "ecommerce",
+    "delivery"
+  ],
+  "last_updated": "2026-04-14T09:37:38.168Z"
+}

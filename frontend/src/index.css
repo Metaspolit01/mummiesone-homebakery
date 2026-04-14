@@ -1,0 +1,89 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* Light green palette — OKLCH hue 130 */
+  --background: 0.97 0.01 130;
+  --foreground: 0.18 0.02 130;
+
+  --primary: 0.72 0.15 130;
+  --primary-foreground: 0.15 0.03 130;
+
+  --secondary: 0.88 0.06 130;
+  --secondary-foreground: 0.20 0.05 130;
+
+  --muted: 0.92 0.03 130;
+  --muted-foreground: 0.45 0.04 130;
+
+  --accent: 0.80 0.10 130;
+  --accent-foreground: 0.15 0.03 130;
+
+  --card: 0.99 0.005 130;
+  --card-foreground: 0.18 0.02 130;
+
+  --border: 0.88 0.05 130;
+  --input: 0.90 0.04 130;
+  --ring: 0.72 0.15 130;
+
+  --destructive: 0.55 0.22 25;
+
+  --radius: 10px;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "DM Sans", sans-serif;
+  background-color: oklch(var(--background));
+  color: oklch(var(--foreground));
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3, h4 {
+  font-family: "Fraunces", serif;
+}
+
+@layer utilities {
+  .gradient-hero {
+    background: linear-gradient(
+      160deg,
+      oklch(0.90 0.10 130) 0%,
+      oklch(0.94 0.06 130) 40%,
+      oklch(0.98 0.02 130) 100%
+    );
+  }
+
+  .gradient-section {
+    background: linear-gradient(
+      180deg,
+      oklch(0.98 0.02 130) 0%,
+      oklch(0.94 0.06 130) 100%
+    );
+  }
+
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .transition-smooth {
+    transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .shadow-subtle {
+    box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.06), 0 1px 2px -1px rgb(0 0 0 / 0.04);
+  }
+
+  .shadow-card {
+    box-shadow: 0 4px 16px -2px rgb(0 0 0 / 0.08), 0 2px 6px -2px rgb(0 0 0 / 0.04);
+  }
+
+  .shadow-hover {
+    box-shadow: 0 8px 24px -4px rgb(0 0 0 / 0.12), 0 4px 8px -4px rgb(0 0 0 / 0.06);
+  }
+}

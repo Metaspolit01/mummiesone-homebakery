@@ -1,0 +1,82 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    box-sizing: border-box;
+  }
+
+  html {
+    font-family: Inter, system-ui, sans-serif;
+  }
+
+  body {
+    background-color: oklch(0.97 0.02 130);
+    color: oklch(0.2 0.04 130);
+    margin: 0;
+    padding: 0;
+  }
+
+  :focus-visible {
+    outline: 2px solid oklch(0.72 0.15 130);
+    outline-offset: 2px;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-primary text-primary-foreground font-semibold px-4 py-2 rounded-lg hover:bg-primary-dark transition-colors duration-200 focus-visible:ring-2;
+  }
+
+  .btn-secondary {
+    @apply bg-surface text-primary-dark border border-surface-border font-medium px-4 py-2 rounded-lg hover:bg-primary-light transition-colors duration-200;
+  }
+
+  .btn-danger {
+    @apply bg-red-500 text-white font-medium px-4 py-2 rounded-lg hover:bg-red-600 transition-colors duration-200;
+  }
+
+  .card {
+    @apply bg-white rounded-xl shadow-sm border border-surface-border p-6;
+  }
+
+  .form-input {
+    @apply w-full border border-surface-border rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all duration-200 bg-white;
+  }
+
+  .form-label {
+    @apply block text-sm font-medium text-gray-700 mb-1;
+  }
+
+  .badge-pending {
+    @apply inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-semibold bg-yellow-100 text-yellow-800;
+  }
+
+  .badge-accepted {
+    @apply inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-semibold bg-blue-100 text-blue-800;
+  }
+
+  .badge-completed {
+    @apply inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-semibold bg-green-100 text-green-800;
+  }
+
+  .badge-cancelled {
+    @apply inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-semibold bg-red-100 text-red-800;
+  }
+
+  .table-th {
+    @apply px-4 py-3 text-left text-xs font-semibold uppercase tracking-wider text-sidebar-muted bg-surface-muted;
+  }
+
+  .table-td {
+    @apply px-4 py-3 text-sm text-gray-700 border-t border-surface-border;
+  }
+}
+
+@layer utilities {
+  .scrollbar-thin {
+    scrollbar-width: thin;
+    scrollbar-color: oklch(0.72 0.15 130) transparent;
+  }
+}
