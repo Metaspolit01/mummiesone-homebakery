@@ -1,5 +1,6 @@
 import { Link, useLocation } from "react-router-dom";
 import type { ReactNode } from "react";
+import { contact } from "../config/contact";
 
 interface LayoutProps {
   children: ReactNode;
@@ -88,7 +89,7 @@ export default function Layout({ children }: LayoutProps) {
               );
             })}
             <a
-              href="tel:7013386529"
+              href={contact.phoneTelHref}
               data-ocid="nav.call_button"
               className="ml-2 px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200"
               style={{
@@ -139,12 +140,12 @@ export default function Layout({ children }: LayoutProps) {
             </div>
             <div className="flex items-center gap-4">
               <a
-                href="tel:7013386529"
+                href={contact.phoneTelHref}
                 data-ocid="footer.call_link"
                 className="text-sm font-medium flex items-center gap-1.5 transition-colors duration-200"
                 style={{ color: "oklch(0.25 0.10 130)", textDecoration: "none" }}
               >
-                📞 7013386529
+                📞 {contact.phoneDisplay}
               </a>
             </div>
           </div>

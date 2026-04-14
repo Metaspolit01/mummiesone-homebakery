@@ -4,6 +4,7 @@ import { getCategories } from "../api/categories";
 import { getItems } from "../api/items";
 import ItemCard from "../components/ItemCard";
 import LoadingSpinner from "../components/LoadingSpinner";
+import { contact } from "../config/contact";
 
 const HIGHLIGHTS = [
   { icon: "🏡", label: "100% Homemade" },
@@ -16,7 +17,7 @@ const CATEGORY_EMOJIS: Record<string, string> = {
   Chocolates: "🍫",
   Brownies: "🍩",
   Cookies: "🍪",
-  Donuts: "🍩",
+  Deserts: "🍩",
 };
 
 export default function Home() {
@@ -106,7 +107,7 @@ export default function Home() {
               Order Now
             </Link>
             <a
-              href="tel:7013386529"
+              href={contact.phoneTelHref}
               data-ocid="home.call_us_button"
               className="px-8 py-3.5 rounded-xl text-base font-semibold border-2 transition-all duration-200"
               style={{
@@ -214,7 +215,7 @@ export default function Home() {
           ) : (
             /* Fallback static categories when API is loading/empty */
             <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-4">
-              {["Cakes", "Chocolates", "Brownies", "Cookies", "Donuts"].map((name) => (
+              {["Cakes", "Chocolates", "Brownies", "Cookies", "Deserts"].map((name) => (
                 <Link
                   key={name}
                   to={`/products?category=${encodeURIComponent(name)}`}
@@ -291,7 +292,7 @@ export default function Home() {
             We take custom orders for birthdays, anniversaries, and special occasions. Call us to discuss your dream cake!
           </p>
           <a
-            href="tel:7013386529"
+            href={contact.phoneTelHref}
             data-ocid="home.contact_call_button"
             className="inline-flex items-center gap-2 px-8 py-3.5 rounded-xl text-base font-semibold transition-all duration-200"
             style={{
@@ -301,7 +302,7 @@ export default function Home() {
               boxShadow: "0 4px 14px oklch(0.72 0.15 130 / 0.35)",
             }}
           >
-            📞 Call 7013386529
+            📞 Call {contact.phoneDisplay}
           </a>
         </div>
       </section>

@@ -1,10 +1,10 @@
 import { useState } from "react";
 import { useParams, Link } from "react-router-dom";
-import { useQuery, useMutation } from "@tanstack/react-query";
+import { useQuery } from "@tanstack/react-query";
 import { getItem } from "../api/items";
-import { createOrder } from "../api/orders";
 import type { OrderInput } from "../types/bakery";
 import LoadingSpinner from "../components/LoadingSpinner";
+import { contact } from "../config/contact";
 
 function getMinDeliveryDate(): string {
   const tomorrow = new Date();
@@ -26,6 +26,7 @@ export default function Order() {
   });
 
   const [success, setSuccess] = useState(false);
+  const [whatsAppUrl, setWhatsAppUrl] = useState<string | null>(null);
 
   const { data: item, isLoading, isError } = useQuery({
     queryKey: ["item", itemId],
@@ -33,10 +34,28 @@ export default function Order() {
     enabled: !!itemId,
   });
 
-  const mutation = useMutation({
-    mutationFn: (input: OrderInput) => createOrder(input),
-    onSuccess: () => setSuccess(true),
-  });
+  function buildWhatsAppMessage(input: OrderInput, price: number): string {
+    const lines: string[] = [];
+    lines.push("Hi Mummies One 👋");
+    lines.push("");
+    lines.push("I would like to place an order:");
+    lines.push(`• Item: ${input.itemName}`);
+    lines.push(`• Price: ₹${price}`);
+    lines.push(`• Delivery: ${input.deliveryType === "pickup" ? "Self Pickup" : "Door Delivery"}`);
+    lines.push(`• Delivery date: ${input.deliveryDate}`);
+    lines.push(`• Payment: ${input.paymentMethod}`);
+    lines.push("");
+    lines.push("Customer details:");
+    lines.push(`• Name: ${input.userName}`);
+    lines.push(`• Phone: ${input.phone}`);
+    if (input.deliveryType === "door") {
+      lines.push(`• Address: ${input.address ?? ""}`);
+    }
+    if (input.customDescription?.trim()) {
+      lines.push(`• Instructions: ${input.customDescription.trim()}`);
+    }
+    return lines.join("\n");
+  }
 
   function handleChange(
     e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>
@@ -53,7 +72,12 @@ export default function Order() {
       itemName: item.name,
       ...form,
     };
-    mutation.mutate(input);
+
+    const message = buildWhatsAppMessage(input, item.price);
+    const url = `https://wa.me/${contact.whatsAppNumberE164}?text=${encodeURIComponent(message)}`;
+    setWhatsAppUrl(url);
+    window.open(url, "_blank", "noopener,noreferrer");
+    setSuccess(true);
   }
 
   if (isLoading) return <LoadingSpinner message="Loading item details..." />;
@@ -90,22 +114,37 @@ export default function Order() {
           className="text-3xl font-bold mb-3"
           style={{ fontFamily: "Fraunces, serif", color: "oklch(0.18 0.02 130)" }}
         >
-          Order Placed!
+          Ready on WhatsApp
         </h2>
         <p className="mb-2" style={{ color: "oklch(0.35 0.04 130)" }}>
-          Your order for <strong>{item.name}</strong> has been received.
+          We opened WhatsApp with your order details for <strong>{item.name}</strong>.
         </p>
         <p className="mb-8 text-sm" style={{ color: "oklch(0.45 0.04 130)" }}>
-          We'll confirm your order shortly. You can also call us at{" "}
+          Just tap <strong>Send</strong> in WhatsApp to confirm your order. You can also call us at{" "}
           <a
-            href="tel:7013386529"
+            href={contact.phoneTelHref}
             style={{ color: "oklch(0.25 0.10 130)" }}
           >
-            7013386529
+            {contact.phoneDisplay}
           </a>{" "}
           for any questions.
         </p>
         <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
+          {whatsAppUrl && (
+            <a
+              href={whatsAppUrl}
+              target="_blank"
+              rel="noreferrer"
+              className="px-6 py-3 rounded-xl text-sm font-medium"
+              style={{
+                backgroundColor: "oklch(0.22 0.10 130)",
+                color: "oklch(0.95 0.04 130)",
+                textDecoration: "none",
+              }}
+            >
+              Open WhatsApp
+            </a>
+          )}
           <Link
             to="/products"
             className="px-6 py-3 rounded-xl text-sm font-medium"
@@ -472,27 +511,10 @@ export default function Order() {
         </div>
 
         {/* Error state */}
-        {mutation.isError && (
-          <div
-            data-ocid="order.error_state"
-            className="p-4 rounded-xl text-sm border"
-            style={{
-              backgroundColor: "oklch(0.96 0.04 25)",
-              borderColor: "oklch(0.88 0.08 25)",
-              color: "oklch(0.40 0.15 25)",
-            }}
-          >
-            ⚠️ Failed to place order. Please try again or call us at{" "}
-            <a href="tel:7013386529" style={{ color: "oklch(0.30 0.18 25)" }}>
-              7013386529
-            </a>
-          </div>
-        )}
-
         {/* Submit */}
         <button
           type="submit"
-          disabled={mutation.isPending}
+          disabled={false}
           data-ocid="order.submit_button"
           className="w-full py-3.5 rounded-xl text-base font-semibold transition-all duration-200 disabled:opacity-60 disabled:cursor-not-allowed"
           style={{
@@ -501,7 +523,7 @@ export default function Order() {
             boxShadow: "0 4px 14px oklch(0.72 0.15 130 / 0.35)",
           }}
         >
-          {mutation.isPending ? "Placing Order..." : `Place Order — ₹${item.price}`}
+          {`Place Order on WhatsApp — ₹${item.price}`}
         </button>
       </form>
     </div>
