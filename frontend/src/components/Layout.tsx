@@ -16,7 +16,10 @@ export default function Layout({ children }: LayoutProps) {
   ];
 
   return (
-    <div className="min-h-screen flex flex-col" style={{ fontFamily: "DM Sans, sans-serif" }}>
+    <div
+      className="min-h-screen flex flex-col w-full overflow-x-hidden"
+      style={{ fontFamily: "DM Sans, sans-serif" }}
+    >
       {/* Header */}
       <header
         className="sticky top-0 z-50 border-b"
@@ -26,11 +29,11 @@ export default function Layout({ children }: LayoutProps) {
           boxShadow: "0 1px 3px 0 rgb(0 0 0 / 0.06)",
         }}
       >
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 py-2 min-h-16 flex flex-wrap items-center justify-between gap-3">
           {/* Branding */}
           <Link
             to="/"
-            className="flex items-center gap-2 group"
+            className="flex items-center gap-2 group min-w-0"
             data-ocid="header.logo_link"
             style={{ textDecoration: "none" }}
           >
@@ -43,21 +46,24 @@ export default function Layout({ children }: LayoutProps) {
             >
               M
             </div>
-            <div className="flex flex-col leading-tight">
+            <div className="flex flex-col leading-tight min-w-0">
               <span
-                className="font-bold text-base"
+                className="font-bold text-base truncate"
                 style={{ fontFamily: "Fraunces, serif", color: "oklch(0.18 0.02 130)" }}
               >
                 Mummies One
               </span>
-              <span className="text-xs" style={{ color: "oklch(0.45 0.04 130)" }}>
+              <span
+                className="text-xs hidden sm:block"
+                style={{ color: "oklch(0.45 0.04 130)" }}
+              >
                 Homemade Bakery
               </span>
             </div>
           </Link>
 
           {/* Nav */}
-          <nav className="flex items-center gap-1">
+          <nav className="flex flex-wrap items-center justify-center sm:justify-end gap-1 sm:gap-2 w-full sm:w-auto">
             {navLinks.map((link) => {
               const isActive = location.pathname === link.to;
               return (
@@ -65,7 +71,7 @@ export default function Layout({ children }: LayoutProps) {
                   key={link.to}
                   to={link.to}
                   data-ocid={`nav.${link.label.toLowerCase()}_link`}
-                  className="px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200"
+                  className="px-3 sm:px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200"
                   style={{
                     color: isActive ? "oklch(0.15 0.03 130)" : "oklch(0.35 0.04 130)",
                     backgroundColor: isActive ? "oklch(0.85 0.10 130)" : "transparent",
@@ -91,7 +97,7 @@ export default function Layout({ children }: LayoutProps) {
             <a
               href={contact.phoneTelHref}
               data-ocid="nav.call_button"
-              className="ml-2 px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200"
+              className="sm:ml-2 px-3 sm:px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200 text-center"
               style={{
                 backgroundColor: "oklch(0.72 0.15 130)",
                 color: "oklch(0.15 0.03 130)",
