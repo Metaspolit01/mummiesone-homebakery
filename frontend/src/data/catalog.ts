@@ -257,7 +257,7 @@ export const ITEMS: Item[] = [
     subcategory: "bento cakes",
     price: 250,
     gm:250,
-    imageUrl: "https://image.cdn.shpy.in/272541/SKU-1339_0-1765982972644.jpg?width=600&format=webp",
+    imageUrl: "/assets/vanilla_cake_bento.jpg",
     available: true,
   },
   {
@@ -267,7 +267,7 @@ export const ITEMS: Item[] = [
     subcategory: "bento cakes",
     price: 300,
     gm:300,
-    imageUrl: "https://cdnnew.igp.com/f_auto,q_auto,t_prodl/products/p-200-grm-chocolate-bento-cakes-184641-m.jpg",
+    imageUrl: "https://cdn.dotpe.in/longtail/store-items/7695373/Iq4dHv9o.webp",
     available: true,
   },
   {
