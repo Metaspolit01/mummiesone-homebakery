@@ -257,7 +257,7 @@ export const ITEMS: Item[] = [
     subcategory: "bento cakes",
     price: 250,
     gm:250,
-    imageUrl: "/assets/vanilla_cake_bento.jpg",
+    imageUrl: "/assets/vanilla_cake_bento.webp",
     available: true,
   },
   {
@@ -272,15 +272,23 @@ export const ITEMS: Item[] = [
   },
   {
     _id: " hamper bento cake",
-    name: "hamper pack Bento",
+    name: "hamper-mini pack Bento",
     category: "cakes",
     subcategory: "bento cakes",
     price: 500,
-    gm:500,
-    imageUrl: "https://cdnnew.igp.com/f_auto,q_auto,t_prodl/products/p-200-grm-hamper-pack-bento-cakes-184640-m.jpg",
+    imageUrl: "/assests/hamper-mini.jpeg",
     available: true,
   },
-   {
+  {
+    _id: " hamper bento cake",
+    name: "hamper-large pack Bento",
+    category: "cakes",
+    subcategory: "bento cakes",
+    price: 800,
+    imageUrl: "/assests/hamper-large.jpeg",
+    available: true,
+  },
+  {
     _id: " dream jar cake",
     name: "Dream jar cake",
     category: "cakes",
