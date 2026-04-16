@@ -370,7 +370,7 @@ export const ITEMS: Item[] = [
     subcategory: "ice cream cake",
     price: 800,
     kg: 1,
-    imageUrl: "https://cakehouseonline.com/wp-content/uploads/2020/07/85b6fa16fda0d286ab6c0e3812d11a90-800x484-1.png"
+    imageUrl: "https://cakehouseonline.com/wp-content/uploads/2020/07/85b6fa16fda0d286ab6c0e3812d11a90-800x484-1.png",
     available: true,
   },
   {
