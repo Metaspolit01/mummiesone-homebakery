@@ -66,7 +66,7 @@ export default function ItemCard({ item, index = 1 }: ItemCardProps) {
               color: "oklch(0.15 0.03 130)",
             }}
           >
-            {item.category}
+            {formatCategoryLabel(item.category)}
           </span>
         </div>
       </div>
@@ -127,13 +127,28 @@ export default function ItemCard({ item, index = 1 }: ItemCardProps) {
   );
 }
 
+function normalize(value: string): string {
+  return value.trim().toLowerCase();
+}
+
+function formatCategoryLabel(category: string): string {
+  const labels: Record<string, string> = {
+    cakes: "Cakes",
+    chocolates: "Chocolates",
+    brownies: "Brownies",
+    cookies: "Cookies",
+    donuts: "Donuts",
+  };
+  return labels[normalize(category)] ?? category;
+}
+
 function getCategoryEmoji(category: string): string {
   const emojis: Record<string, string> = {
-    Cakes: "🎂",
-    Chocolates: "🍫",
-    Brownies: "🍩",
-    Cookies: "🍪",
-    Donuts: "🍩",
+    cakes: "🎂",
+    chocolates: "🍫",
+    brownies: "🍩",
+    cookies: "🍪",
+    donuts: "🍩",
   };
-  return emojis[category] ?? "🧁";
+  return emojis[normalize(category)] ?? "🧁";
 }

@@ -121,7 +121,7 @@ export const ITEMS: Item[] = [
     subcategory: "Cool cakes",
     price: 1000,
     KG: 1,
-    imageUrl: "E:\\homebakery\\mummiesone-homebakery\\frontend\\public\\assets\\Cherry-Vanilla-Pink-Rosette-Cake-001-Photoroom_4.webp",
+    imageUrl: "/assets/Cherry-Vanilla-Pink-Rosette-Cake-001-Photoroom_4.webp",
     available: true,
   },
   {
@@ -131,7 +131,7 @@ export const ITEMS: Item[] = [
     subcategory: "Cool cakes",
     price: 1000,
     KG: 1,
-    imageUrl: "E:\\homebakery\\mummiesone-homebakery\\frontend\\public\\assets\\Re-Shoot-Cake-11-A.jpg",
+    imageUrl: "/assets/Re-Shoot-Cake-11-A.jpg",
     available: true,
   },
   {
@@ -151,7 +151,7 @@ export const ITEMS: Item[] = [
     subcategory: "Cool cakes",
     price: 1100,
     KG: 1,
-    imageUrl: "E:\\homebakery\\mummiesone-homebakery\\frontend\\public\\assets\\fruite-cake.webp",
+    imageUrl: "/assets/fruite-cake.webp",
     available: true,
   },
 
@@ -235,7 +235,7 @@ export const ITEMS: Item[] = [
     subcategory: "cup cakes",
     price: 35,
     pieace: 1,
-    imageUrl: "https://www.cookingclassy.com/wp-content/uploads/2019/10/chocolate-cupcakes-20.jpg",
+    imageUrl: "https://bakewithshivesh.com/wp-content/uploads/2021/03/IMG_3062-scaled.jpg",
     available: true,
   },
   {
@@ -245,7 +245,7 @@ export const ITEMS: Item[] = [
     subcategory: "cup cakes",
     price: 35,
     pieace: 1,
-    imageUrl: "https://www.cookingclassy.com/wp-content/uploads/2019/10/muffins-20.jpg",
+    imageUrl: "https://i.pinimg.com/236x/57/bc/92/57bc92817067a25e70cb275433a77b68.jpg",
     available: true,
   },
 
@@ -257,7 +257,7 @@ export const ITEMS: Item[] = [
     subcategory: "bento cakes",
     price: 250,
     gm:250,
-    imageUrl: "https://cdnnew.igp.com/f_auto,q_auto,t_prodl/products/p-200-grm-vanilla-bento-cakes-184642-m.jpg",
+    imageUrl: "https://image.cdn.shpy.in/272541/SKU-1339_0-1765982972644.jpg?width=600&format=webp",
     available: true,
   },
   {
@@ -277,7 +277,7 @@ export const ITEMS: Item[] = [
     subcategory: "bento cakes",
     price: 500,
     gm:500,
-    imgageUrl: "https://cdnnew.igp.com/f_auto,q_auto,t_prodl/products/p-200-grm-hamper-pack-bento-cakes-184640-m.jpg",
+    imageUrl: "https://cdnnew.igp.com/f_auto,q_auto,t_prodl/products/p-200-grm-hamper-pack-bento-cakes-184640-m.jpg",
     available: true,
   },
    {
