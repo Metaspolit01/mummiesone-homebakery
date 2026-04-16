@@ -119,7 +119,7 @@ export default function Products() {
           Our Baked Goods
         </h1>
         <p className="text-base" style={{ color: "oklch(0.38 0.05 130)" }}>
-          Homemade with love — Hyderabad's favourite bakery
+          Homemade with love — freshly baked treats by mummies one
         </p>
       </div>
 

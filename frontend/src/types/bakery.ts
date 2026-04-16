@@ -4,15 +4,24 @@ export interface Item {
   category: string;
   subcategory?: string;
   price: number;
-  description: string;
+  description?: string;
   imageUrl?: string;
   available: boolean;
+
+  // Item size / unit (kept flexible to match current catalog data)
+  kg?: number;
+  KG?: number;
+  gm?: number;
+  jar?: number;
+  pieces?: number;
+  piece?: number;
+  pieace?: number;
 }
 
 export interface Category {
   _id: string;
   name: string;
-  subcategories: string[];
+  subcategories?: string[];
 }
 
 export interface Order {

@@ -9,6 +9,7 @@ interface ItemCardProps {
 
 export default function ItemCard({ item, index = 1 }: ItemCardProps) {
   const isCustomized = normalize(item.category) === "customized cakes";
+  const sizeLabel = formatItemSizeLabel(item);
   const whatsAppHref = `https://wa.me/${contact.whatsAppNumberE164}?text=${encodeURIComponent(
     `Hi Mummies One, I want to enquire about ${item.name}.`,
   )}`;
@@ -86,15 +87,20 @@ export default function ItemCard({ item, index = 1 }: ItemCardProps) {
           {item.name}
         </h3>
         {item.subcategory && (
-          <p className="text-xs mb-2" style={{ color: "oklch(0.50 0.04 130)" }}>
+          <p className="text-xs mb-1" style={{ color: "oklch(0.50 0.04 130)" }}>
             {item.subcategory}
+          </p>
+        )}
+        {sizeLabel && (
+          <p className="text-xs mb-2" style={{ color: "oklch(0.50 0.04 130)" }}>
+            {sizeLabel}
           </p>
         )}
         <p
           className="text-sm leading-relaxed flex-1 line-clamp-2"
           style={{ color: "oklch(0.40 0.04 130)" }}
         >
-          {item.description}
+          {item.description ?? ""}
         </p>
         <div className="mt-3 flex items-center justify-between gap-2">
           {isCustomized ? (
@@ -181,6 +187,30 @@ export default function ItemCard({ item, index = 1 }: ItemCardProps) {
 
 function normalize(value: string): string {
   return value.trim().toLowerCase();
+}
+
+function formatItemSizeLabel(item: Item): string | null {
+  const kg = item.KG ?? item.kg;
+  if (typeof kg === "number" && Number.isFinite(kg) && kg > 0) {
+    return `${kg} kg`;
+  }
+
+  const gm = item.gm;
+  if (typeof gm === "number" && Number.isFinite(gm) && gm > 0) {
+    return `${gm} gm`;
+  }
+
+  const jar = item.jar;
+  if (typeof jar === "number" && Number.isFinite(jar) && jar > 0) {
+    return `${jar} ${jar === 1 ? "jar" : "jars"}`;
+  }
+
+  const pieces = item.pieces ?? item.piece ?? item.pieace;
+  if (typeof pieces === "number" && Number.isFinite(pieces) && pieces > 0) {
+    return `${pieces} ${pieces === 1 ? "piece" : "pcs"}`;
+  }
+
+  return null;
 }
 
 function formatCategoryLabel(category: string): string {

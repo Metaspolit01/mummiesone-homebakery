@@ -2,7 +2,7 @@ import { useState } from "react";
 import { useParams, Link } from "react-router-dom";
 import { useQuery } from "@tanstack/react-query";
 import { getItem } from "../api/items";
-import type { OrderInput } from "../types/bakery";
+import type { Item, OrderInput } from "../types/bakery";
 import LoadingSpinner from "../components/LoadingSpinner";
 import { contact } from "../config/contact";
 
@@ -10,6 +10,24 @@ function getMinDeliveryDate(): string {
   const tomorrow = new Date();
   tomorrow.setDate(tomorrow.getDate() + 1);
   return tomorrow.toISOString().split("T")[0];
+}
+
+function formatItemSizeLabel(item: Item): string | null {
+  const kg = item.KG ?? item.kg;
+  if (typeof kg === "number" && Number.isFinite(kg) && kg > 0) return `${kg} kg`;
+
+  const gm = item.gm;
+  if (typeof gm === "number" && Number.isFinite(gm) && gm > 0) return `${gm} gm`;
+
+  const jar = item.jar;
+  if (typeof jar === "number" && Number.isFinite(jar) && jar > 0)
+    return `${jar} ${jar === 1 ? "jar" : "jars"}`;
+
+  const pieces = item.pieces ?? item.piece ?? item.pieace;
+  if (typeof pieces === "number" && Number.isFinite(pieces) && pieces > 0)
+    return `${pieces} ${pieces === 1 ? "piece" : "pcs"}`;
+
+  return null;
 }
 
 export default function Order() {
@@ -34,12 +52,21 @@ export default function Order() {
     enabled: !!itemId,
   });
 
-  function buildWhatsAppMessage(input: OrderInput, price: number): string {
+  const sizeLabel = item ? formatItemSizeLabel(item) : null;
+
+  function buildWhatsAppMessage(
+    input: OrderInput,
+    price: number,
+    sizeLabel?: string | null,
+  ): string {
     const lines: string[] = [];
     lines.push("Hi Mummies One 👋");
     lines.push("");
     lines.push("I would like to place an order:");
     lines.push(`• Item: ${input.itemName}`);
+    if (sizeLabel) {
+      lines.push(`• Size: ${sizeLabel}`);
+    }
     lines.push(`• Price: ₹${price}`);
     lines.push(`• Delivery: ${input.deliveryType === "pickup" ? "Self Pickup" : "Door Delivery"}`);
     lines.push(`• Delivery date: ${input.deliveryDate}`);
@@ -73,7 +100,7 @@ export default function Order() {
       ...form,
     };
 
-    const message = buildWhatsAppMessage(input, item.price);
+    const message = buildWhatsAppMessage(input, item.price, formatItemSizeLabel(item));
     const url = `https://wa.me/${contact.whatsAppNumberE164}?text=${encodeURIComponent(message)}`;
     setWhatsAppUrl(url);
     window.open(url, "_blank", "noopener,noreferrer");
@@ -218,6 +245,7 @@ export default function Order() {
           <p className="text-sm mt-0.5" style={{ color: "oklch(0.45 0.04 130)" }}>
             {item.category}
             {item.subcategory ? ` · ${item.subcategory}` : ""}
+            {sizeLabel ? ` · ${sizeLabel}` : ""}
           </p>
           <p
             className="text-xl font-bold mt-1"

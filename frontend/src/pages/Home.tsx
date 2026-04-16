@@ -89,7 +89,7 @@ export default function Home() {
             className="text-lg sm:text-xl mb-10 leading-relaxed text-balance"
             style={{ color: "oklch(0.28 0.06 130)" }}
           >
-            Homemade treats crafted with the finest ingredients. Custom cakes, artisan chocolates &amp; more — delivered with love in Hyderabad.
+            Homemade treats crafted with the finest ingredients. Custom cakes, artisan chocolates &amp; more — delivered with love in vizag.
           </p>
 
           {/* CTA Buttons */}
