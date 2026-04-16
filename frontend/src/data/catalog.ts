@@ -91,7 +91,7 @@ export const ITEMS: Item[] = [
     subcategory: "Cool cakes",
     price: 800,
     KG: 1,
-    imageUrl: "https://imgcdn.floweraura.com/mango-pistachio-cake-with-mom-topper-9781190ca-AAAA.jpg"
+    imageUrl: "https://imgcdn.floweraura.com/mango-pistachio-cake-with-mom-topper-9781190ca-AAAA.jpg",
     available: true,
   },
   {
