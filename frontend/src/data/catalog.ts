@@ -31,6 +31,7 @@ export const ITEMS: Item[] = [
     category: "Cakes",
     price: 599,
     KG: 1,
+    imageUrl: "https://i.ytimg.com/vi/mgvvo4lTybc/maxresdefault.jpg",
     available: true,
   },
   {
@@ -40,6 +41,7 @@ export const ITEMS: Item[] = [
     subcategory: "Cool cakes",
     price: 699,
     KG: 1,
+    imageUrl: "https://www.orderyourchoice.com/115961-large_default/vanilla-cake-sunrise-bakery.jpg",
     available: true,
   },
   {
@@ -49,6 +51,7 @@ export const ITEMS: Item[] = [
     subcategory: "Cool cakes",
     price: 800,
     KG: 1,
+    imageUrl: "https://lekshmibakers.com/wp-content/uploads/2023/11/1YLXYLsKtRIQgY4uVuIGb7eCQfaDfESIt9_Y64xvKhuBlr7Bb2A.jpg",
     available: true,
   },
   {
@@ -58,6 +61,7 @@ export const ITEMS: Item[] = [
     subcategory: "Cool cakes",
     price: 800,
     KG: 1,
+    imageUrl: "https://giftnmore.in/wp-content/uploads/2024/08/Cream-drop-Pineapple-cake-5.jpeg",
     available: true,
   },
   {
@@ -67,6 +71,7 @@ export const ITEMS: Item[] = [
     subcategory: "Cool cakes",
     price: 800,
     KG: 1,
+    imageUrl: "https://mariasmixingbowl.com/wp-content/uploads/2025/02/strawberry-cream-cake-1.jpg",
     available: true,
   },
   {
@@ -76,6 +81,7 @@ export const ITEMS: Item[] = [
     subcategory: "Cool cakes",
     price: 850,
     KG: 1,
+    imageUrl: "https://i.ytimg.com/vi/43x-KQ4tS1Y/maxresdefault.jpg",
     available: true,
   },
   {
@@ -85,6 +91,7 @@ export const ITEMS: Item[] = [
     subcategory: "Cool cakes",
     price: 800,
     KG: 1,
+    imageUrl: "https://imgcdn.floweraura.com/mango-pistachio-cake-with-mom-topper-9781190ca-AAAA.jpg"
     available: true,
   },
   {
@@ -94,6 +101,7 @@ export const ITEMS: Item[] = [
     subcategory: "Cool cakes",
     price: 800,
     KG: 1,
+    imageUrl: "https://assets.winni.in/c_limit,dpr_1,fl_progressive,q_80,w_1000/40572_extravagant-blueberry-cake.jpeg",
     available: true,
   },
   {
@@ -103,15 +111,17 @@ export const ITEMS: Item[] = [
     subcategory: "Cool cakes",
     price: 800,
     KG: 1,
+    imageUrl: "https://assets.winni.in/c_limit,dpr_1,fl_progressive,q_80,w_1000/31443_premium-black-currant-cake.jpeg",
     available: true,
   },
   {
-    _id: "chocoruffle cool cake",
-    name: "chocoruffle ",
+    _id: "chocotuffle cool cake",
+    name: "choco tuffle ",
     category: "cakes",
     subcategory: "Cool cakes",
     price: 1000,
     KG: 1,
+    imageUrl: "E:\\homebakery\\mummiesone-homebakery\\frontend\\public\\assets\\Cherry-Vanilla-Pink-Rosette-Cake-001-Photoroom_4.webp",
     available: true,
   },
   {
@@ -121,6 +131,7 @@ export const ITEMS: Item[] = [
     subcategory: "Cool cakes",
     price: 1000,
     KG: 1,
+    imageUrl: "E:\\homebakery\\mummiesone-homebakery\\frontend\\public\\assets\\Re-Shoot-Cake-11-A.jpg",
     available: true,
   },
   {
@@ -130,6 +141,7 @@ export const ITEMS: Item[] = [
     subcategory: "Cool cakes",
     price: 1000,
     KG: 1,
+    imageUrl: "https://www.bigbasket.com/media/uploads/recipe/w-l/3392_1_1.jpg", 
     available: true,
   },
   {
@@ -139,6 +151,7 @@ export const ITEMS: Item[] = [
     subcategory: "Cool cakes",
     price: 1100,
     KG: 1,
+    imageUrl: "E:\\homebakery\\mummiesone-homebakery\\frontend\\public\\assets\\fruite-cake.webp",
     available: true,
   },
 
@@ -150,6 +163,7 @@ export const ITEMS: Item[] = [
     subcategory: "normal cakes",
     price: 600,
     KG: 1,
+    imageUrl: "https://queen.com.au/wp-content/uploads/2019/04/Vanilla-Cake-WEB.jpg",
     available: true,
   },
   {
@@ -159,6 +173,7 @@ export const ITEMS: Item[] = [
     subcategory: "normal cakes",
     price: 650,
     KG: 1,
+    imageUrl: "https://i.ytimg.com/vi/43x-KQ4tS1Y/maxresdefault.jpg",
     available: true,
   },
   {
@@ -168,6 +183,7 @@ export const ITEMS: Item[] = [
     subcategory: "normal cakes",
     price: 600,
     KG: 1,
+    imageUrl: "https://giftnmore.in/wp-content/uploads/2024/08/Cream-drop-Pineapple-cake-5.jpeg",
     available: true,
   },
   {
@@ -177,6 +193,7 @@ export const ITEMS: Item[] = [
     subcategory: "normal cakes",
     price: 600,
     KG: 1,
+    imageUrl: "https://mariasmixingbowl.com/wp-content/uploads/2025/02/strawberry-cream-cake-1.jpg",
     available: true,
   },
   {
@@ -186,6 +203,7 @@ export const ITEMS: Item[] = [
     subcategory: "normal cakes",
     price: 600,
     KG: 1,
+    imageUrl: "https://www.yuvaflowers.com/cdn/shop/files/butterscotch-cake-1-kg-manual-yuvaflowers-og-733-default-title-42416226599192.jpg",
     available: true,
   },
 
@@ -197,6 +215,7 @@ export const ITEMS: Item[] = [
     subcategory: "cup cakes",
     price: 20,
     pieace: 1,
+    imageUrl: "https://cdn.mos.cms.futurecdn.net/imgzkqvhtxTozZEVmTRv5k.jpg",
     available: true,
   },
   {
@@ -206,6 +225,7 @@ export const ITEMS: Item[] = [
     subcategory: "cup cakes",
     price: 30,
     pieace: 1,
+    imageUrl: "https://cakemehometonight.com/wp-content/uploads/2020/08/Vanilla-Cupcakes-26.jpg",
     available: true,
   },
   {
@@ -215,6 +235,7 @@ export const ITEMS: Item[] = [
     subcategory: "cup cakes",
     price: 35,
     pieace: 1,
+    imageUrl: "https://www.cookingclassy.com/wp-content/uploads/2019/10/chocolate-cupcakes-20.jpg",
     available: true,
   },
   {
@@ -224,44 +245,49 @@ export const ITEMS: Item[] = [
     subcategory: "cup cakes",
     price: 35,
     pieace: 1,
+    imageUrl: "https://www.cookingclassy.com/wp-content/uploads/2019/10/muffins-20.jpg",
     available: true,
   },
 
   //bento cakes
   {
     _id: " vanilla bento cake",
-    name: "vanilla",
+    name: "vanilla Bento",
     category: "cakes",
     subcategory: "bento cakes",
     price: 250,
     gm:250,
+    imageUrl: "https://cdnnew.igp.com/f_auto,q_auto,t_prodl/products/p-200-grm-vanilla-bento-cakes-184642-m.jpg",
     available: true,
   },
   {
-    _id: " choco cake",
-    name: "chocolate",
+    _id: " choco bento cake",
+    name: "chocolate Bento ",
     category: "cakes",
     subcategory: "bento cakes",
     price: 300,
     gm:300,
+    imageUrl: "https://cdnnew.igp.com/f_auto,q_auto,t_prodl/products/p-200-grm-chocolate-bento-cakes-184641-m.jpg",
     available: true,
   },
   {
     _id: " hamper bento cake",
-    name: "hamper pack",
+    name: "hamper pack Bento",
     category: "cakes",
     subcategory: "bento cakes",
     price: 500,
     gm:500,
+    imgageUrl: "https://cdnnew.igp.com/f_auto,q_auto,t_prodl/products/p-200-grm-hamper-pack-bento-cakes-184640-m.jpg",
     available: true,
   },
    {
     _id: " dream jar cake",
-    name: "Dream cake",
+    name: "Dream jar cake",
     category: "cakes",
     subcategory: "jar cakes",
     price: 600,
     gm: 500,
+    imageUrl: "https://images.takecdn.com/Cdn/production/Items/Images/Original/663ed419-70ed-4ed5-b16d-46a5128cb845.jpeg",
     available: true,
   },
 
@@ -273,6 +299,7 @@ export const ITEMS: Item[] = [
     subcategory: "jar cakes",
     price: 80,
     jar:1,
+    imageUrl: "https://assets.giftalove.com/resources/common/giftimages/largeimage/funfetti-vanilla-jar-cake.jpg",
     available: true,
   },
   {
@@ -282,6 +309,7 @@ export const ITEMS: Item[] = [
     subcategory: "jar cakes",
     price: 80,
     jar:1,
+    imageUrl: "https://cdnnew.igp.com/f_auto,q_auto,t_prodl/products/p-200-grm-butterscotch-crunch-jar-cakes-184639-m.jpg",
     available: true,
   },
   {
@@ -291,6 +319,7 @@ export const ITEMS: Item[] = [
     subcategory: "jar cakes",
     price: 80,
     jar:1,
+    imageUrl: "https://butterry.com/image/cache/catalog/bursting_blueberry_jar_cake-1000x1000.jpg",
     available: true,
   },
   {
@@ -300,6 +329,7 @@ export const ITEMS: Item[] = [
     subcategory: "jar cakes",
     price: 80,
     jar:1,
+    imageUrl: "https://imgcdn.floweraura.com/mango-jar-cake-duo-for-mom-9778760jca-B.jpg",
     available: true,
   },
   {
@@ -309,6 +339,7 @@ export const ITEMS: Item[] = [
     subcategory: "jar cakes",
     price: 80,
     jar:1,
+    imageUrl: "https://static-assets-prod.fnp.com/images/pr/l/v20180731115506/set-of-2-sumptuous-pineapple-jar-cake_1.jpg",
     available: true,
   },
   {
@@ -318,6 +349,7 @@ export const ITEMS: Item[] = [
     subcategory: "jar cakes",
     price: 80,
     jar:1,
+    imageUrl: "https://avonbakers.com/wp-content/uploads/2020/03/product_398547strawberry-cake-in-a-jar.jpg",
     available: true,
   },
   {
@@ -327,6 +359,7 @@ export const ITEMS: Item[] = [
     subcategory: "jar cakes",
     price: 80,
     jar:1,
+    imageUrl: "https://www.generalmillsindiabfs.in/wp-content/uploads/2021/02/jar-cake.png",
     available: true,
   },
   //ice cream cakes
@@ -337,6 +370,7 @@ export const ITEMS: Item[] = [
     subcategory: "ice cream cake",
     price: 800,
     kg: 1,
+    imageUrl: "https://cakehouseonline.com/wp-content/uploads/2020/07/85b6fa16fda0d286ab6c0e3812d11a90-800x484-1.png"
     available: true,
   },
   {
@@ -346,6 +380,7 @@ export const ITEMS: Item[] = [
     subcategory: "ice cream cake",
     price: 800,
     kg: 1,
+    imageUrl: "https://www.cakesworld.in/images/web/butterscotch_22104.jpg",
     available: true,
   },
   {
@@ -355,6 +390,7 @@ export const ITEMS: Item[] = [
     subcategory: "ice cream cake",
     price: 800,
     kg: 1,
+    imageUrl: "https://www.deliciousmagazine.co.uk/wp-content/uploads/2022/07/DEL_2022_Q3_GarethMorgans_StrawberryIceCreamCake.jpg",
     available: true,
   },
   {
@@ -364,6 +400,7 @@ export const ITEMS: Item[] = [
     subcategory: "ice cream cake",
     price: 900,
     kg: 1,
+    imageUrl: "https://as1.ftcdn.net/jpg/02/51/20/80/1000_F_251208043_TsR8QBni1H7stOAT1LcrJswXJpcb6vkP.jpg",
     available: true,
   },
 
@@ -375,7 +412,7 @@ export const ITEMS: Item[] = [
     subcategory: "cheese cakes",
     price: 1000,
     kg: 1,
-    imageUrl: "https://www.modernhoney.com/vanilla-cheesecake/",
+    imageUrl: "https://www.modernhoney.com/wp-content/uploads/2020/12/Vanilla-Cheesecake-Recipe-3-scaled.jpg",
     available: true,
   },
   {
@@ -395,7 +432,7 @@ export const ITEMS: Item[] = [
     subcategory: "cheese cakes",
     price: 1000,
     kg: 1,
-    imageUrl: "https://www.olivemagazine.com/recipes/baking-and-desserts/easy-vanilla-cheesecake/",
+    imageUrl: "https://www.allrecipes.com/thmb/EvPu7jeuePr6gwTb_no77BAEc_A=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/4ButterscotchCheesecake-2000-bbbb80dfe32a47efb3070de47fc12ce4.jpg",
     available: true,
 
   },
@@ -406,7 +443,7 @@ export const ITEMS: Item[] = [
     subcategory: "cheese cakes",
     price: 1000,
     kg: 1,
-    imageUrl: "https://www.bbc.co.uk/food/recipes/vodka_strawberry_89729",
+    imageUrl: "https://ichef.bbci.co.uk/food/ic/food_16x9_1600/recipes/no-bake_strawberry_30276_16x9.jpg",
     available: true,
 
   },
@@ -417,7 +454,7 @@ export const ITEMS: Item[] = [
     subcategory: "cheese cakes",
     price: 1200,
     kg: 1,
-    imageUrl: "https://recipesbyclare.com/recipes/easy-blueberry-cheesecake",
+    imageUrl: "https://preppykitchen.com/wp-content/uploads/2022/07/Blueberry-Cheesecake-Recipe-500x500.jpg",
     available: true,
   },
 
