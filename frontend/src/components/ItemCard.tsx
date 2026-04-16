@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import type { Item } from "../types/bakery";
+import { contact } from "../config/contact";
 
 interface ItemCardProps {
   item: Item;
@@ -7,6 +8,11 @@ interface ItemCardProps {
 }
 
 export default function ItemCard({ item, index = 1 }: ItemCardProps) {
+  const isCustomized = normalize(item.category) === "customized cakes";
+  const whatsAppHref = `https://wa.me/${contact.whatsAppNumberE164}?text=${encodeURIComponent(
+    `Hi Mummies One, I want to enquire about ${item.name}.`,
+  )}`;
+
   return (
     <div
       data-ocid={`products.item.${index}`}
@@ -91,35 +97,81 @@ export default function ItemCard({ item, index = 1 }: ItemCardProps) {
           {item.description}
         </p>
         <div className="mt-3 flex items-center justify-between gap-2">
-          <span
-            className="text-lg font-bold"
-            style={{ fontFamily: "Fraunces, serif", color: "oklch(0.22 0.10 130)" }}
-          >
-            ₹{item.price}
-          </span>
-          {item.available ? (
-            <Link
-              to={`/order/${item._id}`}
-              data-ocid={`products.order_button.${index}`}
-              className="px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200"
-              style={{
-                backgroundColor: "oklch(0.72 0.15 130)",
-                color: "oklch(0.15 0.03 130)",
-                textDecoration: "none",
-              }}
-            >
-              Order Now
-            </Link>
+          {isCustomized ? (
+            item.available ? (
+              <div className="flex items-center justify-end gap-2 w-full">
+                <a
+                  href={contact.phoneTelHref}
+                  data-ocid={`products.customized.call_button.${index}`}
+                  className="px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200"
+                  style={{
+                    backgroundColor: "oklch(0.92 0.06 130)",
+                    color: "oklch(0.18 0.02 130)",
+                    textDecoration: "none",
+                    border: "1px solid oklch(0.85 0.06 130)",
+                  }}
+                >
+                  Call
+                </a>
+                <a
+                  href={whatsAppHref}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  data-ocid={`products.customized.whatsapp_button.${index}`}
+                  className="px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200"
+                  style={{
+                    backgroundColor: "oklch(0.72 0.15 130)",
+                    color: "oklch(0.15 0.03 130)",
+                    textDecoration: "none",
+                  }}
+                >
+                  WhatsApp
+                </a>
+              </div>
+            ) : (
+              <span
+                className="px-4 py-2 rounded-lg text-sm font-medium cursor-not-allowed ml-auto"
+                style={{
+                  backgroundColor: "oklch(0.88 0.04 130)",
+                  color: "oklch(0.55 0.04 130)",
+                }}
+              >
+                Unavailable
+              </span>
+            )
           ) : (
-            <span
-              className="px-4 py-2 rounded-lg text-sm font-medium cursor-not-allowed"
-              style={{
-                backgroundColor: "oklch(0.88 0.04 130)",
-                color: "oklch(0.55 0.04 130)",
-              }}
-            >
-              Unavailable
-            </span>
+            <>
+              <span
+                className="text-lg font-bold"
+                style={{ fontFamily: "Fraunces, serif", color: "oklch(0.22 0.10 130)" }}
+              >
+                ₹{item.price}
+              </span>
+              {item.available ? (
+                <Link
+                  to={`/order/${item._id}`}
+                  data-ocid={`products.order_button.${index}`}
+                  className="px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200"
+                  style={{
+                    backgroundColor: "oklch(0.72 0.15 130)",
+                    color: "oklch(0.15 0.03 130)",
+                    textDecoration: "none",
+                  }}
+                >
+                  Order Now
+                </Link>
+              ) : (
+                <span
+                  className="px-4 py-2 rounded-lg text-sm font-medium cursor-not-allowed"
+                  style={{
+                    backgroundColor: "oklch(0.88 0.04 130)",
+                    color: "oklch(0.55 0.04 130)",
+                  }}
+                >
+                  Unavailable
+                </span>
+              )}
+            </>
           )}
         </div>
       </div>
@@ -134,6 +186,7 @@ function normalize(value: string): string {
 function formatCategoryLabel(category: string): string {
   const labels: Record<string, string> = {
     cakes: "Cakes",
+    "customized cakes": "Customized Cakes",
     chocolates: "Chocolates",
     brownies: "Brownies",
     cookies: "Cookies",
@@ -145,6 +198,7 @@ function formatCategoryLabel(category: string): string {
 function getCategoryEmoji(category: string): string {
   const emojis: Record<string, string> = {
     cakes: "🎂",
+    "customized cakes": "🎨",
     chocolates: "🍫",
     brownies: "🍩",
     cookies: "🍪",

@@ -15,20 +15,25 @@ export const CATEGORIES: Category[] = [
     ],
   },
   {
+    _id: "customized-cakes",
+    name: "Customized Cakes",
+    
+  },
+  {
     _id: "chocolates",
     name: "Chocolates",
     subcategories: ["Homemade", "Bouquets", "Hampers"],
   },
-  { _id: "brownies", name: "Brownies", subcategories: [] },
-  { _id: "cookies", name: "Cookies", subcategories: [] },
-  { _id: "donuts", name: "Donuts", subcategories: [] },
+  { _id: "brownies", name: "Brownies" },
+  { _id: "cookies", name: "Cookies" },
+  { _id: "donuts", name: "Donuts" },
 ];
 
 export const ITEMS: Item[] = [
   {
     _id: "tea-time cake",
     name: "Tea Time Cake",
-    category: "Cakes",
+    category: "normal cakes",
     price: 599,
     KG: 1,
     imageUrl: "https://i.ytimg.com/vi/mgvvo4lTybc/maxresdefault.jpg",
@@ -164,6 +169,53 @@ export const ITEMS: Item[] = [
     imageUrl: "/assets/fruite-cake.webp",
     available: true,
   },
+  {
+    _id: "Lotus biscoffe cool cake",
+    name: "Lotus biscoffe ",
+    category: "cakes",
+    subcategory: "Cool cakes",
+    price: 1200,
+    KG: 1,
+    imageUrl: "/assets/lotus.jpg",
+    available: true,
+  },
+  {
+    _id: "red velvet cool cake",
+    name: "red velvet ",
+    category: "cakes",
+    subcategory: "Cool cakes",
+    price: 1000,
+    KG: 1,
+    imageUrl: "https://theartisticcook.com/wp-content/uploads/2024/11/Red-Velvet-Layer-Cake-Thumbnail.jpg",
+    available: true,
+  },
+  {
+    _id: "rasmalai cool cake",
+    name: "Rasmalai ",
+    category: "cakes",
+    subcategory: "Cool cakes",
+    price: 1200,
+    KG: 1,
+    imageUrl: "https://flowera.in/uploads/tempDir/RaSmalai-Cake--800X800.webp",
+    available: true,
+  },
+  {
+    _id: "gulabjamu cool cake",
+    name: "Gulab Jamun ",
+    category: "cakes",
+    subcategory: "Cool cakes",
+    price: 1000,
+    KG: 1,
+    imageUrl: "assets/gulab-jamun.jpg",
+    available: true,
+  },
+
+
+
+
+
+
+
 
   //normal cakes
   {
@@ -217,6 +269,12 @@ export const ITEMS: Item[] = [
     available: true,
   },
 
+
+
+
+
+
+
   //cup cakes
   {
     _id: "plane cup cake",
@@ -259,6 +317,9 @@ export const ITEMS: Item[] = [
     available: true,
   },
 
+
+
+
   //bento cakes
   {
     _id: " vanilla bento cake",
@@ -298,6 +359,14 @@ export const ITEMS: Item[] = [
     imageUrl: "/assets/hamper-large.jpeg",
     available: true,
   },
+
+
+
+
+
+
+
+  //jar cakes
   {
     _id: " dream jar cake",
     name: "Dream jar cake",
@@ -307,9 +376,7 @@ export const ITEMS: Item[] = [
     gm: 500,
     imageUrl: "https://images.takecdn.com/Cdn/production/Items/Images/Original/663ed419-70ed-4ed5-b16d-46a5128cb845.jpeg",
     available: true,
-  },
-
-  //jar cakes
+  }, 
   {
     _id: " vanilla jar cake",
     name: "vanilla",
@@ -476,5 +543,330 @@ export const ITEMS: Item[] = [
     available: true,
   },
 
+
+
+// BROWINES
+
+  {
+    _id: " plain brownie",
+    name: "plain brownie",
+    category: "brownies",
+    price: 1000,
+    kg: 1,
+    imageUrl: "https://img.taste.com.au/gOpVgvz8/taste/2016/11/classic-chewy-brownie-102727-1.jpeg",
+    available: true,
+  },
+  {
+    _id: " double chocolate brownie",
+    name: "double chocolate brownie",
+    category: "brownies",
+    price: 1200,
+    kg: 1,
+    imageUrl: "https://www.foodandwine.com/thmb/Phtqf6eMsZuto27kxz3XEfBccqw=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/lee-lees-double-chocolate-chunk-brownies-FT-RECIPE0319_0-9c037470a180443abad63ef21565af98.jpg",
+    available: true,
+  },
+  {
+    _id: " triple chocolate brownie",
+    name: "triple chocolate brownie",
+    category: "brownies",
+    price: 1400,
+    kg: 1,
+    imageUrl: "https://static01.nyt.com/images/2025/02/13/multimedia/vv-triple-chocolate-brownies-bqvt/vv-triple-chocolate-brownies-bqvt-mediumSquareAt3X.jpg",
+    available: true,
+  },
+  {
+    _id: " Dry-fruit brownie",
+    name: "dry-fruit brownie",
+    category: "brownies",
+    price: 1600,
+    kg: 1,
+    imageUrl: "https://www.sunbeamfoods.com.au/wp-content/uploads/2024/01/Fruit-and-Nut-Fudge-Brownie_Web.webp",
+    available: true,
+  },
+
+
+
+
+
+//cookies
+  {
+    _id: " butter cookie",
+    name: " Butter cookie",
+    category: "cookies",
+    gm :250,
+    price: 300,
+    imageUrl: "https://www.sugarsaltmagic.com/wp-content/uploads/2023/12/Danish-Butter-Cookies-10FEAT.jpg",
+    available: true,
+  },
+  {
+    _id: " choco  cookie",
+    name: " Chocolate Chip Cookie",
+    category: "cookies",
+    gm :250,
+    price: 350,
+    imageUrl: "https://bakewithshivesh.com/wp-content/uploads/2020/05/151F814A-2749-4978-BA53-3AD2A962C933-scaled.jpg",
+    available: true,
+  },
+  {
+    _id: " dry-fruit  cookie",
+    name: " Dry-Fruit Cookie",
+    category: "cookies",
+    gm :250,
+    price: 350,
+    imageUrl: "https://cpimg.tistatic.com/7206772/b/4/dry-fruit-cookies.jpg",
+    available: true,
+  },
+  {
+    _id: " millet   cookie",
+    name: " Millet Cookie",
+    category: "cookies",
+    gm :250,
+    price: 350,
+    imageUrl: "assets/Millet.webp",
+    available: true,
+  },
+   {
+    _id: "choco-butter  cookie",
+    name: " Chocolate Butter Cookie",
+    category: "cookies",
+    gm :250,
+    price: 350,
+    imageUrl: "https://sallysbakingaddiction.com/wp-content/uploads/2023/12/chocolate-butter-cookies-photo-2.jpg",
+    available: true,
+  },
+
+  
+
+
+  //chocolates
+  {
+    _id: "plain chocolate",
+    name: " Plain Chocolate",
+    category: "chocolates",
+    subcategory: "homemade",
+    gm :250,
+    price: 300,
+    imageUrl: "assets/plain.jpeg",
+    available: true,
+  },
+  {
+    _id: "white chocolate",
+    name: " White Chocolate",
+    category: "chocolates",
+    subcategory: "homemade",
+    gm :250,
+    price: 350,
+    imageUrl: "assets/white.jpeg",
+    available: true,
+  },
+  {
+    _id: "almond chocolate",
+    name: " Almond Chocolate",
+    category: "chocolates",
+    subcategory: "homemade",
+    gm :250,
+    price: 400,
+    imageUrl: "assets/kaju.jpeg",
+    available: true,
+  },
+  {
+    _id: "kaju chocolate",
+    name: " Kaju Chocolate",
+    category: "chocolates",
+    subcategory: "homemade",
+    gm :250,
+    price: 400,
+    imageUrl: "assets/kaju.jpeg", 
+    available: true,
+  },
+  {
+    _id: "fruity nut chocolate",
+    name: " Fruity Nut Chocolate",
+    category: "chocolates",
+    subcategory: "homemade",
+    gm :250,
+    price: 400,
+    imageUrl: "https://keviniscooking.com/wp-content/uploads/2016/06/Dark-Chocolate-Fruit-Nut-Bites1.jpg",
+    available: true,
+  },
+  {
+    _id: "kunafa mini-bar chocolate",
+    name: " Kunafa Mini-Bar Chocolate",
+    category: "chocolates",
+    subcategory: "homemade",
+    price: 100,
+    imageUrl: "assets/kunafa-mini.webp",
+    available: true,
+  },
+  {
+    _id: "kunafa big-bar chocolate",
+    name: " Kunafa Big-Bar Chocolate",
+    category: "chocolates",
+    subcategory: "homemade",
+    price: 500,
+    imageUrl: "assets/Kunafa-large.webp",
+    available: true,
+  },
+ 
+  {
+    _id: "chocolate pops",
+    name: " Chocolate Pops",
+    category: "chocolates",
+    subcategory: "Homemade",
+    pieace : 1,
+    price: 30,
+    imageUrl: "https://www.justataste.com/wp-content/uploads/2021/07/easy-chocolate-cookie-pops-no-bake.jpg",
+    available: true,
+  }, 
+  {
+    _id: "chocolate gift pack",
+    name: " Chocolate Gift Pack(small box)",
+    category: "chocolates",
+    subcategory: "Hampers",
+    pieace : 10,
+    price: 200,
+    imageUrl: "https://cdn.uengage.io/uploads/7175/image-794765-1718253259.jpeg",
+    available: true,
+  },
+  {
+    _id: "chocolate gift pack",
+    name: " Chocolate Gift Pack(medium box)",
+    category: "chocolates",
+    subcategory: "Hampers",
+    pieace : 20,
+    price: 350,
+    imageUrl: "https://www.fnp.com/images/pr/l/v20251216171420/beautiful-box-of-assorted-chocolates-18-pcs_3.jpg",
+    available: true,
+  },
+  {
+    _id: "chocolate gift pack",
+    name: " Chocolate Gift Pack(large box)",
+    category: "chocolates",
+    subcategory: "Hampers",
+    pieace : 40,
+    price: 600,
+    imageUrl: "https://m.media-amazon.com/images/I/61txQILHPwL._AC_UF894,1000_QL80_.jpg",
+    available: true,
+  },
+  {
+    _id: "Homemade chocolate bouquet",
+    name: "Homemade Chocolate Bouquet",
+    category: "chocolates",
+    subcategory: "Bouquets",
+    price: 500,
+    imageUrl: "assets/images.jpg",
+    available: true,
+  },
+  {
+    _id: "Homemade chocolate bouquet",
+    name: "Homemade Chocolate Bouquet(large)",
+    category: "chocolates",
+    subcategory: "Bouquets",
+    price: 1000,
+    imageUrl: "https://tiimg.tistatic.com/fp/1/006/608/best-price-handmade-chocolate-bouquet-268.jpg",
+    available: true,
+  },
+
+
+
+
+  //donuts
+
+  {
+    _id: "choco donut",
+    name: "Chocolate Donut",
+    category: "donuts",
+    pieace :1,
+    price: 50,
+    imageUrl: "https://www.sugarsaltmagic.com/wp-content/uploads/2021/11/Frosted-Chocolate-Sprinkle-Donuts-3FEAT.jpg",
+    available: true,
+  },
+  {
+    _id: "mini donut",
+    name: "Mini Donut",
+    category: "donuts",
+    pieace :1,
+    price: 30,
+    imageUrl: "https://www.sugarsaltmagic.com/wp-content/uploads/2021/11/Frosted-Chocolate-Sprinkle-Donuts-3FEAT.jpg",
+    available: true,
+  },
+  {
+    _id: "Bumboloni's donut",
+    name: "Bumboloni's ",
+    category: "donuts",
+    pieace :1,
+    price: 80,
+    imageUrl: "https://www.twistandmake.com/hs-fs/hubfs/twist-and-make-images/New-Twist-and-Make-Recipes/640-Images/14-oreo-cadbury-bombolini.png?width=640&height=640&name=14-oreo-cadbury-bombolini.png",
+    available: true,
+  },
+  {
+    _id: "mini Bumboloni's donut",
+    name: "Mini Bumboloni's Donut",
+    category: "donuts",
+    pieace :1,
+    price: 50,
+    imageUrl: "assets/bomboloni.webp",
+    available: true,
+  },
+
+
+
+  //customized cakes
+  {
+    _id: "customized-cakes",
+    name: "Customized Cakes",
+    category: "Customized Cakes",
+    imageUrl: "/assets/1.jpeg",
+    available: true,
+  },
+  {
+    _id: "customized-cakes",
+    name: "Customized Cakes",
+    category: "Customized Cakes",
+    imageUrl: "/assets/2.jpeg",
+    available: true,
+  },
+  {
+    _id: "customized-cakes",
+    name: "Customized Cakes",
+    category: "Customized Cakes",
+    imageUrl: "/assets/3.jpeg",
+    available: true,
+  },
+  {
+    _id: "customized-cakes",
+    name: "Customized Cakes",
+    category: "Customized Cakes",
+    imageUrl: "/assets/4.jpeg",
+    available: true,
+  },
+  {
+    _id: "customized-cakes",
+    name: "Customized Cakes",
+    category: "Customized Cakes",
+    imageUrl: "/assets/5.jpeg",
+    available: true,
+  },
+  {
+    _id: "customized-cakes",
+    name: "Customized Cakes",
+    category: "Customized Cakes",
+    imageUrl: "/assets/6.jpeg",
+    available: true,
+  },
+  {
+    _id: "customized-cakes",
+    name: "Customized Cakes",
+    category: "Customized Cakes",
+    imageUrl: "/assets/7.jpeg",
+    available: true,
+  },
+  {
+    _id: "customized-cakes",
+    name: "Customized Cakes",
+    category: "Customized Cakes",
+    imageUrl: "/assets/8.jpeg",
+    available: true,
+  },
 
 ];

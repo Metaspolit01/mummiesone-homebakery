@@ -14,6 +14,7 @@ const HIGHLIGHTS = [
 
 const CATEGORY_EMOJIS: Record<string, string> = {
   Cakes: "🎂",
+  "Customized Cakes": "🎨",
   Chocolates: "🍫",
   Brownies: "🍩",
   Cookies: "🍪",
@@ -143,15 +144,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Hero image */}
-      <section className="w-full overflow-hidden" style={{ maxHeight: 380 }}>
-        <img
-          src="/assets/generated/hero-bakery.dim_1200x600.jpg"
-          alt="Fresh baked goods from Mummies One Bakery"
-          className="w-full object-cover"
-          style={{ maxHeight: 380 }}
-        />
-      </section>
+      
 
       {/* Categories section */}
       <section
@@ -215,7 +208,7 @@ export default function Home() {
           ) : (
             /* Fallback static categories when API is loading/empty */
             <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-4">
-              {["Cakes", "Chocolates", "Brownies", "Cookies", "Deserts"].map((name) => (
+              {["Cakes", "Chocolates", "Brownies", "Cookies", "Donuts"].map((name) => (
                 <Link
                   key={name}
                   to={`/products?category=${encodeURIComponent(name)}`}
