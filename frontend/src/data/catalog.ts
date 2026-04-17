@@ -200,6 +200,16 @@ export const ITEMS: Item[] = [
     imageUrl: "assets/gulab-jamun.jpg",
     available: true,
   },
+  {
+    _id: "kitkat cool cake",
+    name: "KitKat ",
+    category: "cakes",
+    subcategory: "Cool cakes",
+    price: 1500,
+    KG: 1,
+    imageUrl: "assets/kitkat.jpeg",
+    available: true,
+  },
 
 
 
