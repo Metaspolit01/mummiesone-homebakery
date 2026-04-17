@@ -141,7 +141,7 @@ export default function Layout({ children }: LayoutProps) {
                 Mummies One Bakery
               </p>
               <p className="text-sm mt-0.5" style={{ color: "oklch(0.40 0.04 130)" }}>
-                Homemade treats crafted with love in Hyderabad
+                Homemade treats crafted with love in Vizag
               </p>
             </div>
             <div className="flex items-center gap-4">
@@ -154,23 +154,6 @@ export default function Layout({ children }: LayoutProps) {
                 📞 {contact.phoneDisplay}
               </a>
             </div>
-          </div>
-          <div
-            className="mt-6 pt-4 text-center text-xs border-t"
-            style={{
-              borderColor: "oklch(0.84 0.06 130)",
-              color: "oklch(0.50 0.04 130)",
-            }}
-          >
-            © {currentYear}. Built with love using{" "}
-            <a
-              href={`https://caffeine.ai?utm_source=caffeine-footer&utm_medium=referral&utm_content=${encodeURIComponent(window.location.hostname)}`}
-              target="_blank"
-              rel="noopener noreferrer"
-              style={{ color: "oklch(0.35 0.10 130)" }}
-            >
-              caffeine.ai
-            </a>
           </div>
         </div>
       </footer>

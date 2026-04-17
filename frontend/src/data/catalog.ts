@@ -363,7 +363,7 @@ export const ITEMS: Item[] = [
     subcategory: "jar cakes",
     price: 600,
     gm: 500,
-    imageUrl: "dreamcake.jpeg",
+    imageUrl: "/assets/dreamcake.jpeg",
     available: true,
   }, 
   {
